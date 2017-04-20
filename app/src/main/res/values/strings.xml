@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Sage</string>
+
+    <string name="action_profile">Profile</string>
+    <string name="action_notification">Notification</string>
+
+    <string name="action_setting">Settings</string>
+
+    <string name="action_edit">Edit</string>
+    <string name="action_share">Share</string>
+
+    <string name="show_more">Show More</string>
+    <string name="show_less">Show Less</string>
+    <string name="message">Message</string>
+    <string name="fork">Fork</string>
+    <string name="posts">Posts</string>
+    <string name="groups">Groups</string>
+    <string name="forking">Forking</string>
+    <string name="forked_by">Forked By</string>
+
+    <!-- Setting screen strings-->
+
+    <string name="edit_profile">Edit Profile</string>
+    <string name="enable_fingerprint">Enable FingerPrint</string>
+    <string name="logout">Logout</string>
+    <string name="see_terms_privacy"><![CDATA[See Terms & Privacy]]></string>
+    <string name="get_help">Get help</string>
+
+</resources>
