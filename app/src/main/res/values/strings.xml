@@ -26,4 +26,10 @@
     <string name="see_terms_privacy"><![CDATA[See Terms & Privacy]]></string>
     <string name="get_help">Get help</string>
 
+
+    <!-- Error String -->
+    <string name="error_internet">Internet not available</string>
+    <string name="error_api">API not responding</string>
+    <string name="error_something">Oops something went wrong</string>
+
 </resources>

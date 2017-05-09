@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.sage.enums.CurrentScreen;
 import com.sage.utils.Utils;
+import com.sage.view.fragment.login.LoginFragment;
+import com.sage.view.fragment.login.SignupFragment;
 import com.sage.view.fragment.profile.EditProfileFragment;
 import com.sage.view.fragment.profile.PostDetailFragment;
 import com.sage.view.fragment.profile.ProfileFragment;
@@ -86,10 +88,13 @@ public class BaseActivity extends AppCompatActivity {
         Fragment currentFragment = null;
         switch (currentScreen) {
             case LOGIN_SCREEN:
-//                currentFragment = new LoginFragment();
+                currentFragment = new LoginFragment();
                 break;
             case FORGOT_PWD_SCREEN:
 //                currentFragment = new ForgotPwdFragment();
+                break;
+            case SIGNUP_SCREEN:
+                currentFragment = new SignupFragment();
                 break;
             case PROFILE_SCREEN:
                 currentFragment = new ProfileFragment();

@@ -10,34 +10,21 @@ public interface Constants {
     /*
     API BASE URL
      */
+    String DEV_APIURL ="http://127.0.0.1:8000/";
     String LIVE_APIURL ="http://starlord.hackerearth.com/";
+
+    String API_URL = DEV_APIURL;
+
     String DEF_PROFILE_URL = "https://organicthemes.com/demo/profile/files/2012/12/profile_img.png";
 
-    String MUSIC_API = "edfora/cokestudio";
+    String LOGIN_API = "polls/login";
+    String REGISTER_API = "polls/register";
+    String GET_INTEREST_API = "polls/get_interests";
+    String SAVE_INTEREST_API = "polls/save_interests";
+    String GET_TIMELINE = "polls/get_timeline";
+    String ADD_POST = "polls/add_post";
 
-    //services action name
-    String ACTION_PLAY = "com.action.PLAY";
-    String BROADCAST_MUSIC_PLAY = "com.music.play";
-    String BROADCAST_MUSIC_DOWNLOAD = "com.music.download";
-    String BROADCAST_HANDLE_NEW_REQUEST = "com.music.manage.download";
 
-    public interface MusicAction {
-        String PLAY_PREVIOUS = "com.play.previous";
-        String PLAY_NEXT = "com.play.next";
-        String TOGGLE = "com.play.toggle";
-        String PLAY_UPDATE_ACTION = "com.foregroundservice.action.play.update";   //update from ui to notification
-    }
-
-    public interface ACTION {
-        public static String MAIN_ACTION = "com.foregroundservice.action.main";
-        public static String INIT_ACTION = "com.foregroundservice.action.init";
-        public static String PREV_ACTION = "com.foregroundservice.action.prev";
-        public static String PLAY_ACTION = "com.foregroundservice.action.play";
-
-        public static String NEXT_ACTION = "com.foregroundservice.action.next";
-        public static String STARTFOREGROUND_ACTION = "com.foregroundservice.action.startforeground";
-        public static String STOPFOREGROUND_ACTION = "com.foregroundservice.action.stopforeground";
-    }
     public interface NOTIFICATION_ID {
         public static int FOREGROUND_SERVICE = 101;
     }

@@ -7,6 +7,7 @@ package com.sage.enums;
 public enum CurrentScreen {
     LOGIN_SCREEN,
     FORGOT_PWD_SCREEN,
+    SIGNUP_SCREEN,
     DASHBOARD_SCREEEN,
 
 

@@ -20,6 +20,7 @@ package com.sage.api;
 import com.sage.enums.ApiName;
 import com.sage.utils.Constants;
 
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -64,8 +65,38 @@ public class APIHandler {
     }
 
     public static APIHandler getInstance() {
-        instance = new APIHandler(Constants.LIVE_APIURL);
+        instance = new APIHandler(Constants.API_URL);
         return instance;
+    }
+
+    public void checkLogin(Map<String,String> param, final APIResponseInterface listener, final ApiName api_name) {
+        call = handler.checkLogin(param);
+        call.enqueue(new retrofit2.Callback() {
+            @Override
+            public void onResponse(Call call, retrofit2.Response response) {
+                listener.onSuccess(response,retrofit,api_name);
+            }
+
+            @Override
+            public void onFailure(Call call, Throwable t) {
+                listener.onFailure(t,api_name);
+            }
+        });
+    }
+
+    public void register(Map<String,String> param, final APIResponseInterface listener, final ApiName api_name) {
+        call = handler.register(param);
+        call.enqueue(new retrofit2.Callback() {
+            @Override
+            public void onResponse(Call call, retrofit2.Response response) {
+                listener.onSuccess(response,retrofit,api_name);
+            }
+
+            @Override
+            public void onFailure(Call call, Throwable t) {
+                listener.onFailure(t,api_name);
+            }
+        });
     }
 
     /*public void getMusicList(final APIResponseInterface listener,final ApiName api_name) {

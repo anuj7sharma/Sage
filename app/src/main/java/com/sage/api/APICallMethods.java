@@ -18,15 +18,29 @@
 package com.sage.api;
 
 
+import com.sage.bean.LoginResponse;
 import com.sage.utils.Constants;
+
+import java.util.Map;
+
 import retrofit2.Call;
+import retrofit2.http.FieldMap;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 
 /**
  * Created by Mobilyte on 2/17/2016.
  */
 public interface APICallMethods {
 
+    @FormUrlEncoded
+    @POST(Constants.LOGIN_API)
+    Call<LoginResponse> checkLogin(@FieldMap Map<String, String> options);
+
+    @FormUrlEncoded
+    @POST(Constants.REGISTER_API)
+    Call<LoginResponse> register(@FieldMap Map<String, String> options);
 
     /*
     @FormUrlEncoded

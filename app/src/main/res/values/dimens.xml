@@ -6,11 +6,13 @@
     <dimen name="card_margin">16dp</dimen>
     <dimen name="nav_drawer_width">260dp</dimen>
 
+    <dimen name="activity_margin_32">32dp</dimen>
     <dimen name="activity_margin_16">16dp</dimen>
     <dimen name="activity_margin_15">15dp</dimen>
     <dimen name="activity_margin_10">10dp</dimen>
-    <dimen name="activity_margin_32">32dp</dimen>
+    <dimen name="activity_margin_8">8dp</dimen>
     <dimen name="activity_margin_5">5dp</dimen>
+    <dimen name="activity_margin_4">4dp</dimen>
     <dimen name="activity_margin_3">3dp</dimen>
 
     <!-- Text size -->

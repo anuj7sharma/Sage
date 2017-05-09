@@ -5,5 +5,8 @@ package com.sage.enums;
  */
 
 public enum ApiName {
-    GET_MUSIC_LIST
+    LOGIN_API,
+    SIGNUP_API,
+    DASHBOARD_API,
+
 }
