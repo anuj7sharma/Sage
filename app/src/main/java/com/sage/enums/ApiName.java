@@ -7,6 +7,7 @@ package com.sage.enums;
 public enum ApiName {
     LOGIN_API,
     SIGNUP_API,
+    GET_INTERESTS_API,
     DASHBOARD_API,
 
 }

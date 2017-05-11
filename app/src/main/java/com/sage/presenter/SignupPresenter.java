@@ -73,7 +73,7 @@ public class SignupPresenter implements APIResponseInterface {
                             SharedPreferencesHandler.setStringValues(context,context.getString(R.string.pref_userid),String.valueOf(obj.getData().get(0).getUid()));
 
                             Intent intent = new Intent(context, DashBoardActivity.class);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             context.startActivity(intent);
                         }else{
                             if(signupView!=null)signupView.showError(obj.getMessage());

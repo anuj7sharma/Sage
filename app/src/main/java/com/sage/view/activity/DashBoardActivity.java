@@ -1,84 +1,44 @@
 package com.sage.view.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.sage.R;
-import com.sage.adapter.PhotoAdapter;
-import com.sage.bean.PhotosBean;
+import com.sage.enums.CurrentScreen;
 import com.sage.view.BaseActivity;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.zip.Inflater;
 
 /**
  * Created by Anuj Sharma on 3/27/2017.
  */
 
-public class DashBoardActivity extends BaseActivity implements View.OnClickListener {
-
-    private Toolbar mToolbar;
-    private RecyclerView mRecyclerView;
-    private ImageView btnListType;
-    private RelativeLayout categoryType;
-
-    private List<PhotosBean> list =new ArrayList<>();
-    private StaggeredGridLayoutManager sm;
-    private PhotoAdapter mAdapter;
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_dashboard, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.action_notification:
-                break;
-            case R.id.action_profile:
-                Intent intent = new Intent(this,ProfileActivity.class);
-                startActivity(intent);
-                break;
-        }
-        return true;
-    }
-
+public class DashBoardActivity extends BaseActivity{
+    private RelativeLayout progressLayout;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-        initViews();
+        progressLayout = (RelativeLayout)findViewById(R.id.progress_parent);
+        progressLayout.setVisibility(View.GONE);
+        if(getIntent()!=null && getIntent().getStringExtra("destination")!=null){
+            if(getIntent().getStringExtra("destination").equals("interest")){
+                changeScreen(R.id.dashboard_container, CurrentScreen.CHOOSE_INTEREST_SCREEN,false,false,null);
+            }
+        }else{
+            //Move to DashBoard Screen
+            changeScreen(R.id.dashboard_container, CurrentScreen.DASHBOARD_SCREEEN,false,false,null);
+        }
     }
 
-    private void initViews() {
-        mToolbar = (Toolbar)findViewById(R.id.toolbar);
-        setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("");
-
-        categoryType = (RelativeLayout)findViewById(R.id.category_type);
-        mRecyclerView = (RecyclerView)findViewById(R.id.recycler_items);
-        btnListType = (ImageView)findViewById(R.id.btn_list_type);
-
-        categoryType.setOnClickListener(this);
-
-        addDummyData();
+    public void showProgress(boolean isShow){
+        if(isShow){
+            progressLayout.setVisibility(View.VISIBLE);
+        }else{
+            progressLayout.setVisibility(View.GONE);
+        }
     }
-
-    private void addDummyData() {
+    /*private void addDummyData() {
         // initialize RecyclerView
         sm = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(sm);
@@ -132,14 +92,7 @@ public class DashBoardActivity extends BaseActivity implements View.OnClickListe
         //add adapter
         mAdapter = new PhotoAdapter(this, list);
         mRecyclerView.setAdapter(mAdapter);
-    }
+    }*/
 
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.category_type:
-                break;
-        }
-    }
 }

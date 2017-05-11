@@ -13,18 +13,19 @@ import android.widget.RelativeLayout;
 import com.sage.R;
 import com.sage.utils.SharedPreferencesHandler;
 import com.sage.utils.Utils;
+import com.sage.view.BaseActivity;
 
 
-public class SettingsActivity extends DashBoardActivity implements View.OnClickListener {
+public class SettingsActivity extends BaseActivity implements View.OnClickListener {
     private Toolbar mToolbar;
     private RelativeLayout btnEditProfile, btnTerms, btnLogout;
 
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_dashboard, menu);
         return false;
-    }
+    }*/
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -69,9 +70,9 @@ public class SettingsActivity extends DashBoardActivity implements View.OnClickL
                     public void onYesClick(String tag) {
                         SharedPreferencesHandler.clearAll(SettingsActivity.this);
                         //Move to Login Screen
-//                        Intent logoutintent = new Intent(SettingsActivity.this, LoginActivity.class);
-//                        logoutintent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//                        startActivity(logoutintent);
+                        Intent logoutintent = new Intent(SettingsActivity.this, LoginActivity.class);
+                        logoutintent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(logoutintent);
                     }
 
                     @Override

@@ -311,6 +311,13 @@ public class Utils {
         animator.start();
     }
 
+    public String getUserID(Context ctx) {
+        String userID = SharedPreferencesHandler.getStringValues(ctx,ctx.getString(R.string.pref_userid));
+
+        return userID==null?"":userID;
+    }
+
+
     /*
   Play Notification Sound Vibrate
    */

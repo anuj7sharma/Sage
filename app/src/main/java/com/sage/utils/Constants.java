@@ -10,7 +10,7 @@ public interface Constants {
     /*
     API BASE URL
      */
-    String DEV_APIURL ="http://127.0.0.1:8000/";
+    String DEV_APIURL ="http://10.20.1.176:8000/";
     String LIVE_APIURL ="http://starlord.hackerearth.com/";
 
     String API_URL = DEV_APIURL;

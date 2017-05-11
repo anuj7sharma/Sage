@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.sage.enums.CurrentScreen;
 import com.sage.utils.Utils;
+import com.sage.view.fragment.dashboard.ChooseInterestFragment;
+import com.sage.view.fragment.dashboard.DashboardFragment;
 import com.sage.view.fragment.login.LoginFragment;
 import com.sage.view.fragment.login.SignupFragment;
 import com.sage.view.fragment.profile.EditProfileFragment;
@@ -95,6 +97,12 @@ public class BaseActivity extends AppCompatActivity {
                 break;
             case SIGNUP_SCREEN:
                 currentFragment = new SignupFragment();
+                break;
+            case CHOOSE_INTEREST_SCREEN:
+                currentFragment = new ChooseInterestFragment();
+                break;
+            case DASHBOARD_SCREEEN:
+                currentFragment = new DashboardFragment();
                 break;
             case PROFILE_SCREEN:
                 currentFragment = new ProfileFragment();

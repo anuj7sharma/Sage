@@ -18,6 +18,7 @@
 package com.sage.api;
 
 import com.sage.enums.ApiName;
+import com.sage.presenter.DashboardPresenter;
 import com.sage.utils.Constants;
 
 import java.util.Map;
@@ -99,6 +100,35 @@ public class APIHandler {
         });
     }
 
+    public void getInterests(Map<String,String> param, final APIResponseInterface listener, final ApiName api_name) {
+        call = handler.getInterests();
+        call.enqueue(new retrofit2.Callback() {
+            @Override
+            public void onResponse(Call call, retrofit2.Response response) {
+                listener.onSuccess(response,retrofit,api_name);
+            }
+
+            @Override
+            public void onFailure(Call call, Throwable t) {
+                listener.onFailure(t,api_name);
+            }
+        });
+    }
+
+    public void getTimeLine(Map<String, String> param, final APIResponseInterface listener, final ApiName api_name) {
+        call = handler.getInterests();
+        call.enqueue(new retrofit2.Callback() {
+            @Override
+            public void onResponse(Call call, retrofit2.Response response) {
+                listener.onSuccess(response,retrofit,api_name);
+            }
+
+            @Override
+            public void onFailure(Call call, Throwable t) {
+                listener.onFailure(t,api_name);
+            }
+        });
+    }
     /*public void getMusicList(final APIResponseInterface listener,final ApiName api_name) {
         call = handler.getMusicList();
         call.enqueue(new retrofit2.Callback() {

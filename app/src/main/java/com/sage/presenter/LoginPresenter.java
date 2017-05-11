@@ -11,6 +11,7 @@ import com.sage.api.APIResponseInterface;
 import com.sage.bean.LoginResponse;
 import com.sage.enums.ApiName;
 import com.sage.utils.SharedPreferencesHandler;
+import com.sage.utils.Utils;
 import com.sage.view.activity.DashBoardActivity;
 import com.sage.view.fragment.login.LoginFragment;
 
@@ -69,11 +70,14 @@ public class LoginPresenter implements APIResponseInterface {
                             SharedPreferencesHandler.setStringValues(context,context.getString(R.string.pref_userid),String.valueOf(obj.getData().get(0).getUid()));
 
                             Intent intent = new Intent(context, DashBoardActivity.class);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            intent.putExtra("destination","interest");
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             context.startActivity(intent);
                         }else{
                             if(loginView!=null)loginView.showError(obj.getMessage());
                         }
+                    }else{
+                        loginView.showError(context.getString(R.string.error_api));
                     }
                     break;
             }

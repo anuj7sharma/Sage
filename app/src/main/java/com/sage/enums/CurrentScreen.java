@@ -8,6 +8,7 @@ public enum CurrentScreen {
     LOGIN_SCREEN,
     FORGOT_PWD_SCREEN,
     SIGNUP_SCREEN,
+    CHOOSE_INTEREST_SCREEN,
     DASHBOARD_SCREEEN,
 
 

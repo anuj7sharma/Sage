@@ -18,6 +18,7 @@
 package com.sage.api;
 
 
+import com.sage.bean.GetInterestsResponse;
 import com.sage.bean.LoginResponse;
 import com.sage.utils.Constants;
 
@@ -27,7 +28,9 @@ import retrofit2.Call;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.QueryMap;
 
 /**
  * Created by Mobilyte on 2/17/2016.
@@ -42,6 +45,11 @@ public interface APICallMethods {
     @POST(Constants.REGISTER_API)
     Call<LoginResponse> register(@FieldMap Map<String, String> options);
 
+    @GET(Constants.GET_INTEREST_API)
+    Call<GetInterestsResponse> getInterests();
+
+    @GET(Constants.GET_TIMELINE)
+    Call<GetInterestsResponse> getTimeline();
     /*
     @FormUrlEncoded
     @POST(ConstantFile.CHECK_IS_DRIVER)
